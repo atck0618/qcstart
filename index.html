@@ -19,16 +19,16 @@
     --qc-deep: #8f0a1e;
     --qc-bright: #e01f38;
     --gold: #b8860b;
-    --bg: #e7ecf3;
-    --bg-grad: radial-gradient(1200px 620px at 15% -12%, #f4f7fb 0%, rgba(244,247,251,0) 60%), var(--bg);
+    --bg: #eee9e1;
+    --bg-grad: radial-gradient(1200px 640px at 15% -14%, #faf7f1 0%, rgba(250,247,241,0) 62%), var(--bg);
     --surface: #ffffff;
-    --surface-2: #f4f7fb;
-    --text: #1b2536;
-    --muted: #5f6b80;
-    --border: #dde3ee;
-    --border-strong: #cbd4e3;
-    --shadow: 0 1px 2px rgba(27,37,54,.05), 0 8px 24px rgba(27,37,54,.07);
-    --shadow-hover: 0 2px 6px rgba(27,37,54,.09), 0 18px 40px rgba(27,37,54,.14);
+    --surface-2: #f8f5ef;
+    --text: #262019;
+    --muted: #736a5e;
+    --border: #e8e1d5;
+    --border-strong: #d9d0c1;
+    --shadow: 0 1px 2px rgba(38,32,25,.05), 0 8px 24px rgba(38,32,25,.08);
+    --shadow-hover: 0 2px 6px rgba(38,32,25,.10), 0 18px 40px rgba(143,10,30,.14);
     --ring: rgba(200,16,46,.32);
   }
 
@@ -112,28 +112,28 @@
     border: 1px solid var(--border-strong); padding: 2px 9px; border-radius: 999px;
   }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(196px, 1fr)); gap: 12px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 13px; }
   a.tile {
-    display: flex; align-items: center; gap: 13px; text-decoration: none; color: inherit;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-    padding: 14px 15px; box-shadow: var(--shadow);
+    display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;
+    text-decoration: none; color: inherit;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 18px 12px 15px; box-shadow: var(--shadow);
     transition: transform .13s ease, box-shadow .13s ease, border-color .13s ease; position: relative;
   }
   a.tile:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: var(--border-strong); }
   a.tile:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--ring), var(--shadow); border-color: var(--qc); }
-  .ico { width: 40px; height: 40px; flex: none; border-radius: 11px; display: grid; place-items: center; color: #fff; }
-  .ico svg { width: 22px; height: 22px; }
+  .ico { width: 48px; height: 48px; flex: none; border-radius: 13px; display: grid; place-items: center; color: #fff; }
+  .ico svg { width: 26px; height: 26px; }
   .ico.brand { background: #fff; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); }
-  .ico.brand svg { width: 26px; height: 26px; }
-  .tl { display: flex; flex-direction: column; min-width: 0; gap: 1px; }
-  .tl .nm { font-weight: 600; font-size: .96rem; line-height: 1.2; }
-  .tile.has-staff .nm { padding-right: 40px; }
-  .tl .dm { font-size: .76rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .tl .note { font-size: .72rem; font-weight: 600; color: var(--qc); margin-top: 3px; }
+  .ico.brand svg { width: 30px; height: 30px; }
+  .tl { display: flex; flex-direction: column; align-items: center; min-width: 0; width: 100%; gap: 2px; }
+  .tl .nm { font-weight: 600; font-size: .9rem; line-height: 1.22; text-wrap: balance; }
+  .tl .dm { font-size: .72rem; color: var(--muted); max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tl .note { font-size: .7rem; font-weight: 600; color: var(--qc); margin-top: 2px; }
   .staff {
-    position: absolute; top: 10px; right: 12px; font-size: .62rem; font-weight: 700;
+    position: absolute; top: 9px; right: 9px; font-size: .58rem; font-weight: 700;
     letter-spacing: .5px; text-transform: uppercase; color: var(--gold);
-    background: color-mix(in srgb, var(--gold) 16%, transparent); padding: 2px 7px; border-radius: 999px;
+    background: color-mix(in srgb, var(--gold) 18%, transparent); padding: 2px 6px; border-radius: 999px;
   }
 
   footer {
@@ -306,7 +306,7 @@
     ],
     ai: [
       { nm: "Gemini", dm: "gemini.google.com", url: "https://gemini.google.com", ico: G.gemini, brand: true },
-      { nm: "Gemini Enterprise", dm: "vertexaisearch.cloud.google.com", url: "https://vertexaisearch.cloud.google.com/home/cid/63d5dcca-6d96-4b80-ad68-acf6e4e6e6fc?hl=en_GB", ico: G.gemEnt, brand: true },
+      { nm: "Gemini Enterprise", dm: "Google Cloud", url: "https://vertexaisearch.cloud.google.com/home/cid/63d5dcca-6d96-4b80-ad68-acf6e4e6e6fc?hl=en_GB", ico: G.gemEnt, brand: true },
       { nm: "JC GoAI Platform", dm: "chat.jcgoai.hk", url: "https://chat.jcgoai.hk/", ico: G.robot, c: "#0f9d8f" }
     ],
     tools: [
