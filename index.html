@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
-  :root { color-scheme: light dark; }
+  :root { color-scheme: light; }
   html, body { margin: 0; }
   img { max-width: 100%; }
   [hidden] { display: none !important; }
@@ -14,57 +14,22 @@
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Figtree:wght@400;500;600;700&display=swap');
 
   :root {
+    color-scheme: light;
     --qc: #c8102e;
     --qc-deep: #8f0a1e;
     --qc-bright: #e01f38;
     --gold: #b8860b;
-    --bg: #f6f2f1;
-    --bg-grad: radial-gradient(1100px 560px at 12% -12%, #efe2e2 0%, rgba(239,226,226,0) 60%), var(--bg);
+    --bg: #e7ecf3;
+    --bg-grad: radial-gradient(1200px 620px at 15% -12%, #f4f7fb 0%, rgba(244,247,251,0) 60%), var(--bg);
     --surface: #ffffff;
-    --surface-2: #faf6f6;
-    --text: #23161a;
-    --muted: #7a6367;
-    --border: #ecdedf;
-    --border-strong: #ddc9cc;
-    --shadow: 0 1px 2px rgba(35,22,26,.05), 0 8px 24px rgba(35,22,26,.07);
-    --shadow-hover: 0 2px 6px rgba(35,22,26,.09), 0 18px 40px rgba(143,10,30,.16);
+    --surface-2: #f4f7fb;
+    --text: #1b2536;
+    --muted: #5f6b80;
+    --border: #dde3ee;
+    --border-strong: #cbd4e3;
+    --shadow: 0 1px 2px rgba(27,37,54,.05), 0 8px 24px rgba(27,37,54,.07);
+    --shadow-hover: 0 2px 6px rgba(27,37,54,.09), 0 18px 40px rgba(27,37,54,.14);
     --ring: rgba(200,16,46,.32);
-  }
-  :root:not([data-theme="light"]) {
-    @media (prefers-color-scheme: dark) {
-      --qc: #ff7183;
-      --qc-deep: #2a0d12;
-      --qc-bright: #ff5c72;
-      --gold: #e6b84e;
-      --bg: #130809;
-      --bg-grad: radial-gradient(1100px 560px at 12% -12%, #2a1013 0%, rgba(42,16,19,0) 60%), var(--bg);
-      --surface: #1d1012;
-      --surface-2: #170c0e;
-      --text: #f5e9ea;
-      --muted: #c39ba0;
-      --border: #3a2327;
-      --border-strong: #4d2f34;
-      --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.45);
-      --shadow-hover: 0 2px 8px rgba(0,0,0,.45), 0 20px 44px rgba(0,0,0,.6);
-      --ring: rgba(255,113,131,.4);
-    }
-  }
-  :root[data-theme="dark"] {
-    --qc: #ff7183;
-    --qc-deep: #2a0d12;
-    --qc-bright: #ff5c72;
-    --gold: #e6b84e;
-    --bg: #130809;
-    --bg-grad: radial-gradient(1100px 560px at 12% -12%, #2a1013 0%, rgba(42,16,19,0) 60%), var(--bg);
-    --surface: #1d1012;
-    --surface-2: #170c0e;
-    --text: #f5e9ea;
-    --muted: #c39ba0;
-    --border: #3a2327;
-    --border-strong: #4d2f34;
-    --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.45);
-    --shadow-hover: 0 2px 8px rgba(0,0,0,.45), 0 20px 44px rgba(0,0,0,.6);
-    --ring: rgba(255,113,131,.4);
   }
 
   * { box-sizing: border-box; }
@@ -86,10 +51,6 @@
     height: 62px; width: auto; flex: none;
     filter: drop-shadow(0 3px 6px rgba(143,10,30,.22));
   }
-  :root[data-theme="dark"] .crest,
-  :root:not([data-theme="light"]) .crest {
-    filter: drop-shadow(0 3px 8px rgba(0,0,0,.5));
-  }
   .mast-titles { display: flex; flex-direction: column; gap: 2px; }
   .mast-titles h1 {
     font-family: 'Fraunces', Georgia, serif; font-weight: 600;
@@ -106,15 +67,6 @@
   .clock .time { font-size: 1.55rem; font-weight: 700; letter-spacing: .5px; }
   .clock .date { color: var(--muted); font-size: .85rem; font-weight: 500; }
 
-  .theme-btn {
-    flex: none; margin-left: 4px; width: 40px; height: 40px; border-radius: 11px;
-    border: 1px solid var(--border-strong); background: var(--surface); color: var(--muted);
-    cursor: pointer; display: grid; place-items: center;
-    transition: color .15s, border-color .15s, transform .1s;
-  }
-  .theme-btn:hover { color: var(--text); border-color: var(--qc); }
-  .theme-btn:active { transform: scale(.94); }
-  .theme-btn svg { width: 19px; height: 19px; }
 
   /* ---- Greeting + search ---- */
   .accent-line { height: 3px; border-radius: 3px; margin-top: 22px;
@@ -202,7 +154,7 @@
     .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
   }
   @media (prefers-reduced-motion: reduce) {
-    a.tile, .theme-btn, form.search button { transition: none; }
+    a.tile, form.search button { transition: none; }
     a.tile:hover { transform: none; }
   }
 </style>
@@ -221,9 +173,6 @@
       <div class="time" id="time">--:--</div>
       <div class="date" id="date">&nbsp;</div>
     </div>
-    <button class="theme-btn" id="theme" type="button" title="Toggle light / dark" aria-label="Toggle light or dark theme">
-      <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-    </button>
   </header>
 
   <div class="accent-line"></div>
@@ -411,22 +360,6 @@
     document.getElementById("greet").innerHTML = g + ", <b>Queen's College</b>.";
   }
   tick(); setInterval(tick, 15000);
-
-  var sun = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
-  var moon = '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>';
-  var root = document.documentElement;
-  var iconEl = document.getElementById("themeIcon");
-  function prefersDark(){ return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches; }
-  function current(){ return root.getAttribute("data-theme") || (prefersDark() ? "dark" : "light"); }
-  function paint(){ iconEl.innerHTML = current() === "dark" ? sun : moon; }
-  try { var saved = localStorage.getItem("qc-theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
-  paint();
-  document.getElementById("theme").addEventListener("click", function () {
-    var next = current() === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem("qc-theme", next); } catch (e) {}
-    paint();
-  });
 })();
 </script>
 
