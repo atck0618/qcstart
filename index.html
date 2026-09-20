@@ -112,12 +112,12 @@
     border: 1px solid var(--border-strong); padding: 2px 9px; border-radius: 999px;
   }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 13px; }
+  .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
   a.tile {
     display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;
     text-decoration: none; color: inherit;
     background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-    padding: 18px 12px 15px; box-shadow: var(--shadow);
+    padding: 27px 10px 14px; box-shadow: var(--shadow);
     transition: transform .13s ease, box-shadow .13s ease, border-color .13s ease; position: relative;
   }
   a.tile:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: var(--border-strong); }
@@ -131,7 +131,7 @@
   .tl .dm { font-size: .72rem; color: var(--muted); max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .tl .note { font-size: .7rem; font-weight: 600; color: var(--qc); margin-top: 2px; }
   .staff {
-    position: absolute; top: 9px; right: 9px; font-size: .58rem; font-weight: 700;
+    position: absolute; top: 8px; right: 8px; font-size: .56rem; font-weight: 700;
     letter-spacing: .5px; text-transform: uppercase; color: var(--gold);
     background: color-mix(in srgb, var(--gold) 18%, transparent); padding: 2px 6px; border-radius: 999px;
   }
@@ -151,8 +151,10 @@
     .clock { text-align: left; }
     .mast-spacer { flex-basis: 100%; height: 0; }
     header.mast { gap: 14px; }
-    .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
   }
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 560px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 380px) { .grid { grid-template-columns: repeat(2, 1fr); } }
   @media (prefers-reduced-motion: reduce) {
     a.tile, form.search button { transition: none; }
     a.tile:hover { transform: none; }
@@ -188,7 +190,7 @@
 
   <section>
     <div class="sec-head">
-      <h2>Queen's College Systems</h2>
+      <h2>Queen's College</h2>
       <div class="rule"></div>
       <span class="tag">School</span>
     </div>
@@ -290,9 +292,9 @@
     school: [
       { nm: "School Webpage", dm: "www.qc.edu.hk", url: "https://www.qc.edu.hk", ico: G.globe, c: "#c8102e" },
       { nm: "eClass", dm: "eclass.qc.edu.hk", url: "https://eclass.qc.edu.hk", ico: G.board, c: "#a8142a" },
-      { nm: "Digital Education", dm: "digital.qc.edu.hk", url: "https://digital.qc.edu.hk", ico: G.spark, c: "#8f0a1e" },
-      { nm: "CloudSAMS", dm: "qc.sams.edu.hk", url: "http://qc.sams.edu.hk/", ico: G.db, c: "#71222f" },
+      { nm: "CloudSAMS", dm: "qc.sams.edu.hk", url: "http://qc.sams.edu.hk/", ico: G.db, c: "#71222f", staff: true },
       { nm: "ESDA", dm: "esda.qc.edu.hk", url: "https://esda.qc.edu.hk/school/", ico: G.grad, c: "#b3283c" },
+      { nm: "Digital Education", dm: "digital.qc.edu.hk", url: "https://digital.qc.edu.hk", ico: G.spark, c: "#8f0a1e" },
       { nm: "IT Committee", dm: "it.qc.edu.hk", url: "https://it.qc.edu.hk", ico: G.key, c: "#5f1620", staff: true, note: "IT-related Forms" }
     ],
     google: [
@@ -324,10 +326,10 @@
       { nm: "Bank Transfer Payment Proof", dm: "Google Sheets", url: "https://docs.google.com/spreadsheets/d/1G5ZngqUWiqCMSLCVF40nfGVw-0MR73TQPH_PjAYqfyI/edit?usp=sharing", ico: G.receipt, c: "#188038", staff: true }
     ],
     edb: [
-      { nm: "EDB Common Log-On", dm: "clo.edb.gov.hk", url: "https://clo.edb.gov.hk", ico: G.key, c: "#0b5a8a" },
-      { nm: "EDB Portal", dm: "portal.edb.gov.hk", url: "https://portal.edb.gov.hk", ico: G.portal, c: "#134e9c" },
-      { nm: "eServices", dm: "eservices.edb.gov.hk", url: "https://eservices.edb.gov.hk", ico: G.services, c: "#1a6ea8" },
-      { nm: "Training Calendar (TCS)", dm: "tcs.edb.gov.hk", url: "https://tcs.edb.gov.hk", ico: G.cal2, c: "#2a7a5f" },
+      { nm: "EDB Common Log-On", dm: "clo.edb.gov.hk", url: "https://clo.edb.gov.hk", ico: G.key, c: "#0b5a8a", staff: true },
+      { nm: "EDB Portal", dm: "portal.edb.gov.hk", url: "https://portal.edb.gov.hk", ico: G.portal, c: "#134e9c", staff: true },
+      { nm: "eServices", dm: "eservices.edb.gov.hk", url: "https://eservices.edb.gov.hk", ico: G.services, c: "#1a6ea8", staff: true },
+      { nm: "Training Calendar (TCS)", dm: "tcs.edb.gov.hk", url: "https://tcs.edb.gov.hk", ico: G.cal2, c: "#2a7a5f", staff: true },
       { nm: "HKEdCity", dm: "hkedcity.net", url: "https://www.hkedcity.net", ico: G.city, c: "#e0552d" }
     ]
   };
